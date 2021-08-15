@@ -1,8 +1,12 @@
 module.exports = {
   integrations: {
-    boilerplate: {
-      location: '@vue-storefront/boilerplate-api/server',
-      configuration: {}
+    learnvuestorefront: {
+      location: '@learnvuestorefront/api/server',
+      configuration: {
+        api: {
+          url: 'https://api.nuxtjs.dev/'
+        }
+      }
     }
   }
 };

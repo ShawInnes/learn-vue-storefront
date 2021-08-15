@@ -8,15 +8,22 @@ import {
   AgnosticBreadcrumb,
   AgnosticFacet
 } from '@vue-storefront/core';
-import type { Facet, FacetSearchCriteria } from '@vue-storefront/boilerplate-api';
+import type { Facet, FacetSearchCriteria } from '@learnvuestorefront/api';
+import { Product } from '@learnvuestorefront/api';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getAll(params: FacetSearchResult<Facet>, criteria?: FacetSearchCriteria): AgnosticFacet[] {
+function getAll(
+  params: FacetSearchResult<Facet>,
+  criteria?: FacetSearchCriteria
+): AgnosticFacet[] {
   return [];
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getGrouped(params: FacetSearchResult<Facet>, criteria?: FacetSearchCriteria): AgnosticGroupedFacet[] {
+function getGrouped(
+  params: FacetSearchResult<Facet>,
+  criteria?: FacetSearchCriteria
+): AgnosticGroupedFacet[] {
   return [];
 }
 
@@ -29,7 +36,9 @@ function getSortOptions(params: FacetSearchResult<Facet>): AgnosticSort {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getCategoryTree(params: FacetSearchResult<Facet>): AgnosticCategoryTree {
+function getCategoryTree(
+  params: FacetSearchResult<Facet>
+): AgnosticCategoryTree {
   return {
     label: '',
     slug: '',
@@ -40,26 +49,9 @@ function getCategoryTree(params: FacetSearchResult<Facet>): AgnosticCategoryTree
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getProducts(params: FacetSearchResult<Facet>): any {
-  return [
-    {
-      _id: 1,
-      _description: 'Some description',
-      _categoriesRef: [
-        '1',
-        '2'
-      ],
-      name: 'Black jacket',
-      sku: 'black-jacket',
-      images: [
-        'https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/081223_1_large.jpg'
-      ],
-      price: {
-        original: 12.34,
-        current: 10.00
-      }
-    }
-  ];
+function getProducts(searchData: any): Product[] {
+  console.log('facetGetters.getProducts');
+  return searchData.data?.products || [];
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -74,7 +66,9 @@ function getPagination(params: FacetSearchResult<Facet>): AgnosticPagination {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getBreadcrumbs(params: FacetSearchResult<Facet>): AgnosticBreadcrumb[] {
+function getBreadcrumbs(
+  params: FacetSearchResult<Facet>
+): AgnosticBreadcrumb[] {
   return [];
 }
 

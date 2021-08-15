@@ -1,5 +1,5 @@
 {
-  "name": "@vue-storefront/boilerplate-api",
+  "name": "@learnvuestorefront/api",
   "version": "2.3.0",
   "private": true,
   "sideEffects": false,
@@ -14,7 +14,8 @@
     "prepublish": "yarn build"
   },
   "dependencies": {
-    "@vue-storefront/core": "^2.3.0"
+    "@vue-storefront/core": "^2.3.0",
+    "axios": "^0.21.1"
   },
   "files": [
     "lib/**/*"

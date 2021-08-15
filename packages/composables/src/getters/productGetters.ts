@@ -4,73 +4,59 @@ import {
   AgnosticPrice,
   ProductGetters
 } from '@vue-storefront/core';
-import type { Product, ProductFilter } from '@vue-storefront/boilerplate-api';
+import type { Product, ProductFilter } from '@learnvuestorefront/api';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getName(product: Product): string {
-  return 'Name';
-}
+export const getProductName = (product: Product): string => product?.name || 'Product\'s name';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getSlug(product: Product): string {
-  return 'slug';
-}
+export const getProductId = (product: Product): string => product?.product_id || '1';
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const getProductSlug = (product: Product): string => product.slug || 'product/' + getProductId(product);
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getPrice(product: Product): AgnosticPrice {
-  return {
-    regular: 0,
-    special: 0
+  const price = {
+    regular: Number(product.price),
+    special: Number(product.price)
   };
+  return price;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getGallery(product: Product): AgnosticMediaGalleryItem[] {
   return [
     {
-      small: 'https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/081223_1_large.jpg',
-      normal: 'https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/081223_1_large.jpg',
-      big: 'https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/081223_1_large.jpg'
+      small: product?.image_url,
+      normal: product?.image_url,
+      big: product?.image_url
     }
   ];
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getCoverImage(product: Product): string {
-  return 'https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/081223_1_large.jpg';
+export const getCoverImage = (product: Product): string => product.image_url || '';
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function getProductFiltered(products: Product[], filters: ProductFilter): Product[] {
+  if (!products) {
+    return [];
+  }
+  return products;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getFiltered(products: Product[], filters: ProductFilter): Product[] {
-  return [
-    {
-      _id: 1,
-      _description: 'Some description',
-      _categoriesRef: [
-        '1',
-        '2'
-      ],
-      name: 'Black jacket',
-      sku: 'black-jacket',
-      images: [
-        'https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/081223_1_large.jpg'
-      ],
-      price: {
-        original: 12.34,
-        current: 10.00
-      }
-    }
-  ];
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getAttributes(products: Product[] | Product, filterByAttributeName?: string[]): Record<string, AgnosticAttribute | string> {
+function getAttributes(
+  products: Product[] | Product,
+  filterByAttributeName?: string[]
+): Record<string, AgnosticAttribute | string> {
   return {};
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getDescription(product: Product): string {
-  return '';
+  return product.size;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -79,13 +65,8 @@ function getCategoryIds(product: Product): string[] {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getId(product: Product): string {
-  return '1';
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getFormattedPrice(price: number): string {
-  return '';
+  return price.toString();
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -99,16 +80,16 @@ function getAverageRating(product: Product): number {
 }
 
 export const productGetters: ProductGetters<Product, ProductFilter> = {
-  getName,
-  getSlug,
+  getName: getProductName,
+  getSlug: getProductSlug,
   getPrice,
   getGallery,
   getCoverImage,
-  getFiltered,
+  getFiltered: getProductFiltered,
   getAttributes,
   getDescription,
   getCategoryIds,
-  getId,
+  getId: getProductId,
   getFormattedPrice,
   getTotalReviews,
   getAverageRating

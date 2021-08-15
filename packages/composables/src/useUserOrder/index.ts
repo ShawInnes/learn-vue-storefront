@@ -3,10 +3,8 @@ import {
   useUserOrderFactory,
   UseUserOrderFactoryParams
 } from '@vue-storefront/core';
-import type { Order } from '@vue-storefront/boilerplate-api';
-import type {
-  useUserOrderSearchParams as SearchParams
-} from '../types';
+import type { Order } from '@learnvuestorefront/api';
+import type { useUserOrderSearchParams as SearchParams } from '../types';
 
 const params: UseUserOrderFactoryParams<Order, SearchParams> = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

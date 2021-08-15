@@ -3,10 +3,8 @@ import {
   useShippingFactory,
   UseShippingParams
 } from '@vue-storefront/core';
-import type { ShippingAddress } from '@vue-storefront/boilerplate-api';
-import type {
-  UseShippingAddParams as AddParams
-} from '../types';
+import type { ShippingAddress } from '@learnvuestorefront/api';
+import type { UseShippingAddParams as AddParams } from '../types';
 
 const params: UseShippingParams<ShippingAddress, AddParams> = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -22,4 +20,6 @@ const params: UseShippingParams<ShippingAddress, AddParams> = {
   }
 };
 
-export const useShipping = useShippingFactory<ShippingAddress, AddParams>(params);
+export const useShipping = useShippingFactory<ShippingAddress, AddParams>(
+  params
+);

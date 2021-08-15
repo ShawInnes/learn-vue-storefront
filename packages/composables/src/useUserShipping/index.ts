@@ -6,7 +6,7 @@ import {
 import type {
   UserShippingAddress as Address,
   UserShippingAddressItem as AddressItem
-} from '@vue-storefront/boilerplate-api';
+} from '@learnvuestorefront/api';
 
 const params: UseUserShippingFactoryParams<Address, AddressItem> = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -40,4 +40,6 @@ const params: UseUserShippingFactoryParams<Address, AddressItem> = {
   }
 };
 
-export const useUserShipping = useUserShippingFactory<Address, AddressItem>(params);
+export const useUserShipping = useUserShippingFactory<Address, AddressItem>(
+  params
+);

@@ -3,7 +3,7 @@ import {
   useReviewFactory,
   UseReviewFactoryParams
 } from '@vue-storefront/core';
-import type { Review } from '@vue-storefront/boilerplate-api';
+import type { Review } from '@learnvuestorefront/api';
 import type {
   UseReviewSearchParams as SearchParams,
   UseReviewAddParams as AddParams
@@ -23,4 +23,6 @@ const params: UseReviewFactoryParams<Review, SearchParams, AddParams> = {
   }
 };
 
-export const useReview = useReviewFactory<Review, SearchParams, AddParams>(params);
+export const useReview = useReviewFactory<Review, SearchParams, AddParams>(
+  params
+);

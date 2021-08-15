@@ -4,7 +4,11 @@ import {
   useWishlistFactory,
   UseWishlistFactoryParams
 } from '@vue-storefront/core';
-import type { Wishlist, WishlistItem, Product } from '@vue-storefront/boilerplate-api';
+import type {
+  Wishlist,
+  WishlistItem,
+  Product
+} from '@learnvuestorefront/api';
 
 const params: UseWishlistFactoryParams<Wishlist, WishlistItem, Product> = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -38,4 +42,6 @@ const params: UseWishlistFactoryParams<Wishlist, WishlistItem, Product> = {
   }
 };
 
-export const useWishlist = useWishlistFactory<Wishlist, WishlistItem, Product>(params);
+export const useWishlist = useWishlistFactory<Wishlist, WishlistItem, Product>(
+  params
+);

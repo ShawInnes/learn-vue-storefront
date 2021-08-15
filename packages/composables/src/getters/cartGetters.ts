@@ -6,13 +6,11 @@ import {
   AgnosticDiscount,
   AgnosticAttribute
 } from '@vue-storefront/core';
-import type { Cart, CartItem } from '@vue-storefront/boilerplate-api';
+import type { Cart, CartItem } from '@learnvuestorefront/api';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getItems (cart: Cart): CartItem[] {
-  return [
-    {}
-  ];
+function getItems(cart: Cart): CartItem[] {
+  return [{}];
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -39,7 +37,10 @@ function getItemQty(item: CartItem): number {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getItemAttributes(item: CartItem, filterByAttributeName?: Array<string>): Record<string, AgnosticAttribute | string> {
+function getItemAttributes(
+  item: CartItem,
+  filterByAttributeName?: Array<string>
+): Record<string, AgnosticAttribute | string> {
   return {
     color: 'red'
   };

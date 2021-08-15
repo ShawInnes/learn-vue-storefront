@@ -3,10 +3,8 @@ import {
   useBillingFactory,
   UseBillingParams
 } from '@vue-storefront/core';
-import type { BillingAddress } from '@vue-storefront/boilerplate-api';
-import type {
-  UseBillingAddParams as AddParams
-} from '../types';
+import type { BillingAddress } from '@learnvuestorefront/api';
+import type { UseBillingAddParams as AddParams } from '../types';
 
 const params: UseBillingParams<BillingAddress, AddParams> = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
