@@ -1,6 +1,6 @@
-import { CustomQuery } from '@vue-storefront/core';
+import { Product } from '../types';
 
-export async function getProduct(context, params, customQuery?: CustomQuery) {
+export async function getProduct(context, params): Promise<Product[]> {
   // Create URL object containing full endpoint URL
   const url = new URL('/beers', context.config.api.url);
 

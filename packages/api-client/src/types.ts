@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export type TODO = unknown;
 
 export type Settings = {
@@ -30,27 +31,6 @@ export type Product = {
   brewer: string;
   country: string;
 };
-
-/*
-[dev:theme]   product_id: 157042,
-[dev:theme]   name: 'Miller High Life',
-[dev:theme]   size: '12  ×  Can 473 ml',
-[dev:theme]   price: '25.25',
-[dev:theme]   beer_id: 157,
-[dev:theme]   image_url: 'http://www.thebeerstore.ca/sites/default/files/styles/brand_hero/public/sbs/brand/0157H_0.png?itok=z9DkLrNN',
-[dev:theme]   category: 'Value',
-[dev:theme]   abv: '4.6',
-[dev:theme]   style: 'N/A',
-[dev:theme]   attributes: 'N/A',
-[dev:theme]   type: 'Lager',
-[dev:theme]   brewer: 'Molson',
-[dev:theme]   country: 'Canada',
-[dev:theme]   on_sale: false,
-[dev:theme]   dir: '/beers',
-[dev:theme]   path: '/beers/miller-high-life',
-[dev:theme]   slug: 'miller-high-life',
-[dev:theme]   updatedAt: '2020-12-11T15:40:35.000Z'
-*/
 
 export type Facet = {
   data?: {
